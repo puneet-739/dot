@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "885910022848",
+    "project_id": "dot-fire",
+    "storage_bucket": "dot-fire.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885910022848:android:b6a668e9941128f5091b25",
+        "android_client_info": {
+          "package_name": "com.example.dot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMtbISvkc_1c7QMcfzWXPQSy2RPXaZhPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
