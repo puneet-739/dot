@@ -1,3 +1,4 @@
+import 'package:dot/profilePage/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'Paint/painter.dart';
 
@@ -19,7 +20,7 @@ class _HomeBaseState extends State<HomeBase> {
         const HomePage(),
         const SearchMe(),
         const GameMania(),
-        const ProfileJi()
+        ProfilePage()
       ][navigationIndex],
       bottomNavigationBar: NavigationBar(
         selectedIndex: navigationIndex,
@@ -107,14 +108,6 @@ class GameMania extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Text('Game Mania');
-  }
-}
-class ProfileJi extends StatelessWidget {
-  const ProfileJi({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Text('Profile Ji');
   }
 }
 
