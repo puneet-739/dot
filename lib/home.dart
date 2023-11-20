@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'Paint/painter.dart';
 
 class HomeBase extends StatefulWidget {
-  const HomeBase({Key? key}) : super(key: key);
+  const HomeBase({super.key});
 
   @override
   State<HomeBase> createState() => _HomeBaseState();
@@ -20,7 +20,7 @@ class _HomeBaseState extends State<HomeBase> {
         const HomePage(),
         const SearchMe(),
         const GameMania(),
-        ProfilePage()
+        const ProfilePage()
       ][navigationIndex],
       bottomNavigationBar: NavigationBar(
         selectedIndex: navigationIndex,
@@ -52,7 +52,7 @@ class _HomeBaseState extends State<HomeBase> {
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
 
 
 class SearchMe extends StatelessWidget {
-  const SearchMe({Key? key}) : super(key: key);
+  const SearchMe({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +103,7 @@ class SearchMe extends StatelessWidget {
 }
 
 class GameMania extends StatelessWidget {
-  const GameMania({Key? key}) : super(key: key);
+  const GameMania({super.key});
 
   @override
   Widget build(BuildContext context) {
