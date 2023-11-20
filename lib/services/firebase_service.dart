@@ -1,7 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../commonWidgets/common_ui.dart';
-
 class FirebaseService {
   // TO CREATE A NEW USER
   static createNewUser(String emailAddress, String password) async {
