@@ -1,6 +1,7 @@
 import 'package:dot/profilePage/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'Paint/painter.dart';
+import 'chatPage/chat_page.dart';
 
 class HomeBase extends StatefulWidget {
   const HomeBase({super.key});
@@ -18,7 +19,7 @@ class _HomeBaseState extends State<HomeBase> {
       appBar: AppBar(title: const Text('D\u2B24t '), backgroundColor: Theme.of(context).primaryColorLight),
       body: [
         const HomePage(),
-        const SearchMe(),
+        ChatPage(),
         const GameMania(),
         const ProfilePage()
       ][navigationIndex],
@@ -37,9 +38,9 @@ class _HomeBaseState extends State<HomeBase> {
             label: 'home'
         ),
         NavigationDestination(
-            selectedIcon: Icon(Icons.search_outlined),
-            icon: Icon(Icons.search),
-            label: 'search'),
+            selectedIcon: Icon(Icons.chat),
+            icon: Icon(Icons.chat_outlined),
+            label: 'chat'),
         NavigationDestination(
             selectedIcon: Icon(Icons.gamepad),
             icon: Icon(Icons.gamepad_outlined),

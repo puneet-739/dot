@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class FirebaseService {
@@ -8,6 +9,10 @@ class FirebaseService {
         email: emailAddress,
         password: password,
       );
+      FirebaseFirestore.instance.collection('users').doc(credential.user!.uid).set({
+        'uid': credential.user!.uid,
+        'email': emailAddress
+      });
       return credential;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
@@ -29,6 +34,10 @@ class FirebaseService {
           email: emailAddress,
           password: password
       );
+      FirebaseFirestore.instance.collection('users').doc(credential.user!.uid).set({
+        'uid': credential.user!.uid,
+        'email': emailAddress
+      }, SetOptions(merge: true));
       return credential;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {

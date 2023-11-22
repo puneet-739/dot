@@ -2,7 +2,6 @@ import 'package:dot/profilePage/login.dart';
 import 'package:dot/services/firebase_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import '../commonWidgets/custom_button.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -12,7 +11,6 @@ class ProfilePage extends StatelessWidget {
     return StreamBuilder<User?>(
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
-        print('data: ${snapshot.data}');
         return Container(
           padding: const EdgeInsets.only(left: 10.0),
           height: 100.0,
