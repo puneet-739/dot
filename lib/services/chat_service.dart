@@ -23,7 +23,8 @@ class ChatService {
   }
 
   // RECEIVE MESSAGE
-  static receiveMessage(String userId, String receiverId) {
+  static Stream<QuerySnapshot<Map<String, dynamic>>> receiveMessage(String receiverId) {
+    String userId = FirebaseAuth.instance.currentUser!.uid;
     List<String> idLists = [userId, receiverId];
     idLists.sort();
     String chatRoomId = idLists.join('_');
@@ -31,7 +32,7 @@ class ChatService {
         .collection('chat-rooms')
         .doc(chatRoomId)
         .collection('messages')
-        .orderBy('timestamp', descending: false)
+        .orderBy('timestamp', descending: true)
         .snapshots();
   }
 }

@@ -6,12 +6,11 @@ class CustomTextFormField extends StatefulWidget {
   final TextEditingController textFormFieldController;
   const CustomTextFormField(
       {
-        Key? key,
+        super.key,
         required this.title,
         required this.textFormFieldKey,
         required this.textFormFieldController
-      })
-      : super(key: key);
+      });
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();

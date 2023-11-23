@@ -36,13 +36,14 @@ class ChatPage extends StatelessWidget {
           return ListView.builder(
               itemCount: snapshot.data!.docs.length,
               itemBuilder: (BuildContext context, int index) {
+                String userId = FirebaseAuth.instance.currentUser!.uid;
                 var data = snapshot.data!.docs[index].data();
-                return userListContainer(data);
+                return userListContainer(data, itsMe: userId == data['uid']);
               });
         });
   }
 
-  Widget userListContainer(data) {
+  Widget userListContainer(data, {bool itsMe = false}) {
     String uid = data['uid'];
     String email = data['email'];
     return InkWell(
@@ -67,7 +68,13 @@ class ChatPage extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 20.0),
-            Text(email.split('@').first)
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(email.split('@').first, style: const TextStyle(fontSize: 16.0),),
+                if(itsMe) const Text('(Its your personal space)', style: TextStyle(fontSize: 12.0),)
+              ],
+            )
           ],
         ),
       ),
