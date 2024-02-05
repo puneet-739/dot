@@ -2,6 +2,7 @@ import 'package:dot/profilePage/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'Paint/painter.dart';
 import 'chatPage/chat_page.dart';
+import 'main.dart';
 
 class HomeBase extends StatefulWidget {
   const HomeBase({super.key});
@@ -73,9 +74,13 @@ class _HomePageState extends State<HomePage> {
   }
   @override
   Widget build(BuildContext context) {
+    customContext = context;
     return Center(
       child: GestureDetector(
-        onTap: () => setState(() {}),
+        onTap: () {
+          setState(() {});
+          // CommonUI.testSnackBar(customContext!, 'Hey dot', FirebaseService.fcmToken.toString());
+        },
         onPanUpdate: (event) {
           setState(() {
             double dx = event.localPosition.dx;
