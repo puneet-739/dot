@@ -2,6 +2,7 @@ import 'package:dot/profilePage/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'Paint/painter.dart';
 import 'chatPage/chat_page.dart';
+import 'game/game_mania.dart';
 import 'main.dart';
 
 class HomeBase extends StatefulWidget {
@@ -21,7 +22,7 @@ class _HomeBaseState extends State<HomeBase> {
       body: [
         const HomePage(),
         ChatPage(),
-        const GameMania(),
+        GameMania(),
         const ProfilePage()
       ][navigationIndex],
       bottomNavigationBar: NavigationBar(
@@ -108,14 +109,7 @@ class SearchMe extends StatelessWidget {
   }
 }
 
-class GameMania extends StatelessWidget {
-  const GameMania({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const Text('Game Mania');
-  }
-}
 
 
 
