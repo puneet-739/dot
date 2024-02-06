@@ -3,7 +3,7 @@ import 'package:dot/commonWidgets/custom_button.dart';
 import 'package:dot/services/firebase_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../commonWidgets/custom_textformfield.dart';
+import '../../commonWidgets/custom_textformfield.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

@@ -2,7 +2,7 @@ import 'package:dot/state/count_bloc/count_event.dart';
 import 'package:dot/state/count_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../state/count_bloc/count_bloc.dart';
+import '../../state/count_bloc/count_bloc.dart';
 
 class GameMania extends StatelessWidget {
   GameMania({super.key});

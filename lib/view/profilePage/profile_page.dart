@@ -1,8 +1,8 @@
-import 'package:dot/profilePage/login.dart';
 import 'package:dot/services/firebase_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../commonWidgets/custom_button.dart';
+import '../../commonWidgets/custom_button.dart';
+import 'login.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
