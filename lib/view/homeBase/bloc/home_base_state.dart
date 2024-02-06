@@ -1,0 +1,1 @@
+enum HomeBaseState {home, chat, game, profile}
