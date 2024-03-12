@@ -29,7 +29,7 @@ class ForGroundPainter extends CustomPainter with PaintMixin {
   @override
   void paint(Canvas canvas, Size size) {
     init();
-    canvas.drawCircle(offset, 100.0, painter);
+    canvas.drawCircle(offset, 70.0, painter);
     canvas.drawCircle(offset, 50.0, colorPaint);
   }
 
@@ -46,9 +46,6 @@ mixin PaintMixin {
   late Paint painter;
   late Paint colorPaint;
   init() {
-    // randomColorValue = Random().nextInt(999999);
-    // randomColorHexValue = int.parse('0xff$randomColorValue');
-    // color = Color(randomColorHexValue);
     color = Colors.primaries[Random().nextInt(Colors.primaries.length)];
     painter = Paint();
     colorPaint = Paint()..color = color;
