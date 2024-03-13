@@ -8,7 +8,6 @@ import 'package:dot/view/profilePage/presentation/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../widgets/dot_app_bar.dart';
-import '../cubit/home_base_cubit.dart';
 
 class HomeBase extends StatefulWidget {
   const HomeBase({super.key});
@@ -18,13 +17,10 @@ class HomeBase extends StatefulWidget {
 }
 
 class _HomeBaseState extends State<HomeBase> {
-  HomeBaseCubit homeBaseCubit = HomeBaseCubit();
-  HomeBaseBloc homeBaseBloc = HomeBaseBloc();
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder(
-      bloc: homeBaseBloc,
+    return BlocBuilder<HomeBaseBloc, HomeBaseState>(
       builder: (BuildContext context, HomeBaseState state) {
         return Scaffold(
           appBar: const DotAppBar(),
@@ -37,7 +33,7 @@ class _HomeBaseState extends State<HomeBase> {
           bottomNavigationBar: NavigationBar(
             selectedIndex: state.index,
             onDestinationSelected: (index) {
-              homeBaseBloc.add(HomeBaseEventEnum.values[index].event);
+              context.read<HomeBaseBloc>().add(HomeBaseEventEnum.values[index].event);
             },
             backgroundColor: Theme.of(context).primaryColorLight,
             destinations: const [

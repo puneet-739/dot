@@ -1,4 +1,5 @@
 import 'package:dot/services/firebase_service.dart';
+import 'package:dot/view/homeBase/bloc/home_base_bloc.dart';
 import 'package:dot/view/profilePage/bloc/theme_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -33,8 +34,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ThemeBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<ThemeBloc>(
+          create: (BuildContext context) => ThemeBloc(),
+        ),
+        BlocProvider<HomeBaseBloc>(
+          create: (BuildContext context) => HomeBaseBloc(),
+        ),
+      ],
       child: BlocBuilder<ThemeBloc, ThemeMode>(
         builder: (context, state) {
           return MaterialApp(

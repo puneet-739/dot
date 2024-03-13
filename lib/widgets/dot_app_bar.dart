@@ -1,6 +1,9 @@
+import 'package:dot/view/homeBase/bloc/home_base_bloc.dart';
+import 'package:dot/view/homeBase/bloc/home_base_state.dart';
 import 'package:dot/view/profilePage/bloc/theme_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../view/profilePage/presentation/setting_bottom_sheet.dart';
 
 class DotAppBar extends StatefulWidget implements PreferredSizeWidget {
   const DotAppBar({super.key});
@@ -20,16 +23,18 @@ class _DotAppBarState extends State<DotAppBar> {
     return AppBar(
         title: const Text('D\u2B24t '),
         actions: [
-          BlocBuilder<ThemeBloc, ThemeMode>(
+          BlocBuilder<HomeBaseBloc, HomeBaseState>(
             builder: (context, state) {
-              return IconButton(
-                  onPressed: () {
-                    ThemeEvent themeEvent = state == ThemeMode.light ? DarkEvent() : LightEvent();
-                    context.read<ThemeBloc>().add(themeEvent);
-                  },
-                  icon: state == ThemeMode.light
-                      ? const Icon(Icons.dark_mode)
-                      : const Icon(Icons.light_mode));
+              if (state == HomeBaseState.profile) {
+                return IconButton(
+                    onPressed: () {
+                      showModalBottomSheet(
+                          context: context,
+                          builder: (BuildContext context) => SettingBottomSheet());
+                    },
+                    icon: const Icon(Icons.settings));
+              }
+              return Container();
             },
           )
         ],
